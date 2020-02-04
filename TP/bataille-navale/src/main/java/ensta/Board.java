@@ -21,7 +21,6 @@ public class Board implements IBoard {
         Integer size = boats[0].length;
         int number_size = size.toString().length() +1;
         int line_size = number_size + size*2-1 +4;
-        int line_stat = 0;
 
         print("Navires :");
         // print les espaces
