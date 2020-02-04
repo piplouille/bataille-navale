@@ -1,4 +1,4 @@
-package ensta;
+package ensta.ship;
 
 public class Submarine extends AbstractShip {
 

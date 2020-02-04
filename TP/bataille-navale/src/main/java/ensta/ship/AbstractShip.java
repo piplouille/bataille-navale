@@ -1,4 +1,4 @@
-package ensta;
+package ensta.ship;
 
 abstract class AbstractShip {
     protected Character label;
