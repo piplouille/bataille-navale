@@ -19,32 +19,35 @@ public class Board {
 
     public void print() {
         int size = boats[0].length;
-        // print première ligne avec "Navires"
         print("Navires :");
         // print les espaces
-        // print première ligne avec "Frappes"
-        print("Frappes :");
+        print("          ");
+        print("Frappes :\n");
         for (int i = 0; i < size ; i++) {
-            // On print le numéro de ligne
             print(i);
             print(" ");
             for (int j = 0 ; j < size ; j++) {
                 // On print les bateaux
+                print(". ");
             }
             // on fait les espaces
-            // On print numéro de ligne
+            print("     ");
+            print(i);
+            print(" ");
             for (int j = 0 ; j < size ; j++) {
                 // on print les frappes
+                // switch (hits[i][j]) {
+                //     case true: print(".") ; break;
+                //     default: print("x") ; break;
+                // }
+                print(". ");
             }
+            print("\n");
         }
     }
 
     public static void print(Object o) {
-        System.out.println(o);
-    }    
-
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello!" );
+        // System.out.println(o);
+        System.out.print(o);
     }
 }
