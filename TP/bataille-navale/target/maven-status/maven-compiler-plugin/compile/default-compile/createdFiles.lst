@@ -1,2 +1,8 @@
-ensta/App.class
+ensta/Destroyer.class
+ensta/AbstractShip.class
 ensta/Board.class
+<<<<<<< HEAD
+=======
+ensta/App.class
+ensta/Cardinal.class
+>>>>>>> 5630aae7caa4a1f66861807b97f87ef3888004de
