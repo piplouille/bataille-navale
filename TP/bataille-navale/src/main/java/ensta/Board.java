@@ -17,8 +17,8 @@ public class Board {
         hits = new boolean[10][10];
     }
 
-    public static void print() {
-        int size = boats[0].size();
+    public void print() {
+        int size = boats[0].length;
         // print première ligne avec "Navires"
         print("Navires :");
         // print les espaces
