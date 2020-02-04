@@ -1,6 +1,6 @@
 package ensta;
 
-public class Board {
+public class Board implements IBoard {
     private String name;
     private Character boats[][];
     private boolean hits[][];
@@ -53,5 +53,13 @@ public class Board {
     public static void print(Object o) {
         // System.out.println(o);
         System.out.print(o);
+    }
+
+    int getSize() {
+        return boats[0].length;
+    }
+
+    void putShip(AbstractShip ship, int x, int y) {
+        // on met la case en x et y, puis selon orientation, on met la suite
     }
 }
