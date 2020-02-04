@@ -17,6 +17,23 @@ public class Board {
         hits = new boolean[10][10];
     }
 
+    public print() {
+        int size = boats[0].size();
+        // print première ligne avec "Navires"
+        // print première ligne avec "Frappes"
+        for (int i = 0; i < size ; i++) {
+            // On print le numéro de ligne
+            for (int j = 0 ; j < size ; j++) {
+                // On print les bateaux
+            }
+            // on fait les espaces
+            // On print numéro de ligne
+            for (int j = 0 ; j < size ; j++) {
+                // on print les frappes
+            }
+        }
+    }
+
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
