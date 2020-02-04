@@ -2,8 +2,14 @@ package ensta;
 
 public class Board {
     private String name;
-    private Character boats;
-    private boolean hits;
+    private Character boats[][];
+    private boolean hits[][];
+
+    public Board(String n_name, int size) {
+        name = n_name;
+        boats = new Character[size][size];
+        hits = new boolean[size][size];
+    }
 
     public static void main( String[] args )
     {
