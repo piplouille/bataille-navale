@@ -21,14 +21,15 @@ public class Board {
         int size = boats[0].length;
         print("Navires :");
         // print les espaces
-        print("          ");
+        print("                  ");
         print("Frappes :\n");
+        print("  A B C D E F G H I J        A B C D E J G H I J\n");
         for (int i = 0; i < size ; i++) {
             print(i);
             print(" ");
             for (int j = 0 ; j < size ; j++) {
                 // On print les bateaux
-                print(". ");
+                print("· ");
             }
             // on fait les espaces
             print("     ");
@@ -40,7 +41,7 @@ public class Board {
                 //     case true: print(".") ; break;
                 //     default: print("x") ; break;
                 // }
-                print(". ");
+                print("· ");
             }
             print("\n");
         }
