@@ -1,3 +1,5 @@
-ensta/App.class
+ensta/Destroyer.class
+ensta/AbstractShip.class
 ensta/Board.class
-ensta/TestBoard.class
+ensta/App.class
+ensta/Cardinal.class

@@ -1,9 +1,5 @@
 package ensta;
 
-public enum Cardinal {
-    NORTH, EAST, SOUTH, WEST;
-}
-
 abstract class AbstractShip {
     protected Character label;
     protected String name;
