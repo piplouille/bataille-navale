@@ -23,6 +23,9 @@ public class Board {
         // print les espaces
         print("                  ");
         print("Frappes :\n");
+        /*
+        Ici, uniquement avec size = 10
+        */
         print("  A B C D E F G H I J        A B C D E J G H I J\n");
         for (int i = 0; i < size ; i++) {
             print(i);
