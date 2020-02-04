@@ -18,26 +18,46 @@ public class Board {
     }
 
     public void print() {
-        int size = boats[0].length;
+        Integer size = boats[0].length;
+        int number_size = size.toString().length() +1;
+        int line_size = number_size + size*2-1 +4;
+        int line_stat = 0;
+
         print("Navires :");
         // print les espaces
-        print("                  ");
+        //print("                  ");
+        printSpace(line_size-8);
         print("Frappes :\n");
         /*
         Ici, uniquement avec size = 10
-        */
         print("  A B C D E F G H I J        A B C D E J G H I J\n");
-        for (int i = 0; i < size ; i++) {
-            print(i);
+        */
+
+        //print nom des colonnes
+        printSpace(number_size);
+        for (int i=0; i<size; ++i) {
+            print((char)('A'+i));
             print(" ");
+        }
+        printSpace(4 + number_size);
+        for (int i=0; i<size; ++i) {
+            print((char)('A'+i));
+            print(" ");
+        }
+        print("\n");
+
+        for (Integer i = 1; i < size+1 ; i++) {
+            print(i);
+            printSpace(number_size - i.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // On print les bateaux
                 print("· ");
             }
             // on fait les espaces
-            print("     ");
+            printSpace(4);
+
             print(i);
-            print(" ");
+            printSpace(number_size - i.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // on print les frappes
                 // switch (hits[i][j]) {
@@ -54,4 +74,11 @@ public class Board {
         // System.out.println(o);
         System.out.print(o);
     }
+
+    public static void printSpace(int n) {
+        for (int i=0; i<n; ++i) {
+            print(" ");
+        }
+    }
+
 }

@@ -6,7 +6,7 @@ package ensta;
  */
 public class App {
     public static void main( String[] args ) {
-        Board board = new Board("cc");
+        Board board = new Board("cc",40);
         board.print();
     }
 }
