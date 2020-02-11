@@ -156,4 +156,8 @@ public class Board implements IBoard {
     public Boolean getHit(final int x, final int y) {
         return hits[x][y];
     }
+
+    public Hit sendHit(int x, int y) {
+        // C'est sur soi-même
+    }
 }

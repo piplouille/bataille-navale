@@ -3,6 +3,7 @@ package annexes;
 import ensta.ship.*;
 import ensta.PutShipException;
 import ensta.Cardinal;
+import annexes.Hit;
 
 public interface IBoard { 
 
@@ -43,4 +44,6 @@ public interface IBoard {
      * @return true if the hit is successful
      */
     Boolean getHit(int x, int y);
+
+    Hit sendHit(int x, int y);
 }
