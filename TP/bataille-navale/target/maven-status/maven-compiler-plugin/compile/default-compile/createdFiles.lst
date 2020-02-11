@@ -1,9 +1,6 @@
 ensta/Board.class
-ensta/ship/AbstractShip.class
-ensta/ship/Destroyer.class
 ensta/ship/Submarine.class
-ensta/ship/Battleship.class
-ensta/App.class
+ensta/ship/AbstractShip.class
 ensta/Cardinal.class
+ensta/ship/Destroyer.class
 annexes/IBoard.class
-ensta/ship/Carrier.class

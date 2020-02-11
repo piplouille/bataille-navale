@@ -90,6 +90,12 @@ public class Board implements IBoard {
 
     public void putShip(AbstractShip ship, int x, int y) {
         // on met la case en x et y, puis selon orientation, on met la suite
+        if (boats[x][y] != '\u0000') {
+            //raise error
+        }
+        else {
+            boats[x][y] = ship.get_label();
+        }
     }
 
     public boolean hasShip(int x, int y) {
