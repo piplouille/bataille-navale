@@ -7,6 +7,8 @@ public abstract class AbstractShip {
     protected int size;
     protected Cardinal orientation;
 
+    protected int strikeCount;
+
     public Character get_label() {return label;}
     public String get_name() {return name;}
     public int get_size() {return size;}
@@ -22,4 +24,16 @@ public abstract class AbstractShip {
         size = n_size;
         orientation = n_orientation;
     }
+
+    public void addStrike() {
+        strikeCount++;
+    }
+
+    public boolean isSunk() {
+        if (strikeCount == size) {
+            return true;
+        }
+        return false;
+    }
+
 }
