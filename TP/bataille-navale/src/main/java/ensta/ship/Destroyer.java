@@ -1,4 +1,5 @@
 package ensta.ship;
+import ensta.Cardinal;
 
 public class Destroyer extends AbstractShip {
 

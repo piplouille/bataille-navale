@@ -1,8 +1,9 @@
-ensta/Destroyer.class
-ensta/AbstractShip.class
 ensta/Board.class
-<<<<<<< HEAD
-=======
+ensta/ship/AbstractShip.class
+ensta/ship/Destroyer.class
+ensta/ship/Submarine.class
+ensta/ship/Battleship.class
 ensta/App.class
 ensta/Cardinal.class
->>>>>>> 5630aae7caa4a1f66861807b97f87ef3888004de
+annexes/IBoard.class
+ensta/ship/Carrier.class

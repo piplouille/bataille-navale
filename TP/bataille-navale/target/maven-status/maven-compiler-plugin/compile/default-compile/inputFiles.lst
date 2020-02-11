@@ -1,10 +1,9 @@
-<<<<<<< HEAD
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Destroyer.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/Cardinal.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Submarine.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/IBoard.java
 /mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/Board.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Carrier.java
 /mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/App.java
-=======
-/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/Cardinal.java
-/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/AbstractShip.java
-/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/Board.java
-/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/App.java
-/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/Destroyer.java
->>>>>>> 5630aae7caa4a1f66861807b97f87ef3888004de
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/AbstractShip.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Battleship.java

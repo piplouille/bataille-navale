@@ -1,5 +1,8 @@
 package ensta;
 
+import ensta.ship.*;
+import annexes.*;
+
 public class Board implements IBoard {
     private String name;
     private Character boats[][];
@@ -45,9 +48,10 @@ public class Board implements IBoard {
         }
         print("\n");
 
-        for (Integer i = 1; i < size+1 ; i++) {
-            print(i);
-            printSpace(number_size - i.toString().length());
+        for (Integer i = 0; i < size ; i++) {
+            Integer line = i+1;
+            print(line);
+            printSpace(number_size - line.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // On print les bateaux
                 print("· ");
@@ -55,8 +59,8 @@ public class Board implements IBoard {
             // on fait les espaces
             printSpace(4);
 
-            print(i);
-            printSpace(number_size - i.toString().length());
+            print(line);
+            printSpace(number_size - line.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // on print les frappes
                 // switch (hits[i][j]) {    
@@ -80,11 +84,25 @@ public class Board implements IBoard {
         }
     }
 
-    int getSize() {
+    public int getSize() {
         return boats[0].length;
     }
 
-    void putShip(AbstractShip ship, int x, int y) {
+    public void putShip(AbstractShip ship, int x, int y) {
         // on met la case en x et y, puis selon orientation, on met la suite
+    }
+
+    public boolean hasShip(int x, int y) {
+
+        return false;
+    }
+
+    public void setHit(boolean hit, int x, int y) {
+
+    }
+
+    public Boolean getHit(int x, int y) {
+
+        return false;
     }
 }

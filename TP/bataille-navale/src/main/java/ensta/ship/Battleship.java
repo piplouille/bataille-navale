@@ -1,4 +1,5 @@
 package ensta.ship;
+import ensta.Cardinal;
 
 public class Battleship extends AbstractShip {
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ensta.AppTest" time="0.089" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ensta.AppTest" time="0.082" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -15,13 +15,8 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-<<<<<<< HEAD
-    <property name="sun.java.command" value="/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/surefire/surefirebooter6528730261535461420.jar /mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/surefire 2020-02-04T12-08-36_818-jvmRun1 surefire108312491046344533tmp surefire_04796637940143084433tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/surefire/surefirebooter2162282632865687859.jar /mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/surefire 2020-02-11T09-54-17_105-jvmRun1 surefire1317159991159731765tmp surefire_06271758041135726117tmp"/>
     <property name="surefire.test.class.path" value="/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/test-classes:/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/classes:/home/luc/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/luc/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
-=======
-    <property name="sun.java.command" value="/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/target/surefire/surefirebooter3189520617338024276.jar /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/target/surefire 2020-02-04T11-56-47_905-jvmRun1 surefire3207779398078028209tmp surefire_01044193077143412692tmp"/>
-    <property name="surefire.test.class.path" value="/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/target/test-classes:/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/target/classes:/home/laetitia/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/laetitia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
->>>>>>> 5630aae7caa4a1f66861807b97f87ef3888004de
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/luc"/>
     <property name="user.language" value="en"/>
@@ -33,11 +28,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-<<<<<<< HEAD
-    <property name="surefire.real.class.path" value="/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/surefire/surefirebooter6528730261535461420.jar"/>
-=======
-    <property name="surefire.real.class.path" value="/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/target/surefire/surefirebooter3189520617338024276.jar"/>
->>>>>>> 5630aae7caa4a1f66861807b97f87ef3888004de
+    <property name="surefire.real.class.path" value="/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/target/surefire/surefirebooter2162282632865687859.jar"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09"/>
@@ -65,9 +56,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-<<<<<<< HEAD
   <testcase name="shouldAnswerWithTrue" classname="ensta.AppTest" time="0.005"/>
-=======
-  <testcase name="shouldAnswerWithTrue" classname="ensta.AppTest" time="0.002"/>
->>>>>>> 5630aae7caa4a1f66861807b97f87ef3888004de
 </testsuite>
