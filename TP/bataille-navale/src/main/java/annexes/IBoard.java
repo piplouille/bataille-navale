@@ -1,7 +1,7 @@
 package annexes;
 
 import ensta.ship.*;
-import ensta.Cardinal
+import ensta.Cardinal;
 
 public interface IBoard { 
 

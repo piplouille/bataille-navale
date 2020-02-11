@@ -3,7 +3,9 @@ package annexes;
 import java.io.Serializable;
 import java.util.List;
 
-import ensta.Cardinal
+import ensta.Cardinal;
+import ensta.Board;
+import ensta.ship.AbstractShip;
 
 public class Player {
     /* **
@@ -37,19 +39,21 @@ public class Player {
 
         do {
             AbstractShip s = ships[i];
-            String msg = String.format("placer %d : %s(%d)", i + 1, s.getName(), s.getLength());
+            String msg = String.format("placer %d : %s(%d)", i + 1, s.get_name(), s.get_size());
             System.out.println(msg);
             InputHelper.ShipInput res = InputHelper.readShipInput();
             // TODO set ship orientation
+            System.out.println(res.orientation);
+            // s.set_orientation(Cardinal.(res.orientation));
             // TODO put ship at given position
+            int x = 97 - res.x;
+            int y = res.y;
 
             /*
             res.orientation : n, s, e, w
             res.x
             res.y
             */
-            int x = 97 - res.x;
-            s.set_orientation(Cardinal.res.orientation);
 
             // TODO when ship placement successful
             ++i;
@@ -59,21 +63,21 @@ public class Player {
         } while (!done);
     }
 
-    public Hit sendHit(int[] coords) {
-        boolean done;
-        Hit hit = null;
+    // public Hit sendHit(int[] coords) {
+    //     boolean done;
+    //     Hit hit = null;
 
-        do {
-            System.out.println("où frapper?");
-            InputHelper.CoordInput hitInput = InputHelper.readCoordInput();
-            // TODO call sendHit on this.opponentBoard
+    //     do {
+    //         System.out.println("où frapper?");
+    //         InputHelper.CoordInput hitInput = InputHelper.readCoordInput();
+    //         // TODO call sendHit on this.opponentBoard
 
-            // TODO : Game expects sendHit to return BOTH hit result & hit coords.
-            // return hit is obvious. But how to return coords at the same time ?
-        } while (!done);
+    //         // TODO : Game expects sendHit to return BOTH hit result & hit coords.
+    //         // return hit is obvious. But how to return coords at the same time ?
+    //     } while (!done);
 
-        return hit;
-    }
+    //     return hit;
+    // }
 
     public AbstractShip[] getShips() {
         return ships;
