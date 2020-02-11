@@ -10,7 +10,7 @@ import ensta.ship.Submarine;
  */
 public class App {
     public static void main( String[] args ) {
-        Board board = new Board("cc");
+        Board board = new Board("cc",40);
         board.print();
         Destroyer bato = new Destroyer("destroyer", Cardinal.NORTH);
     }
