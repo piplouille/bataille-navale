@@ -43,8 +43,14 @@ public class Player {
             System.out.println(msg);
             InputHelper.ShipInput res = InputHelper.readShipInput();
             // TODO set ship orientation
-            System.out.println(res.orientation);
-            // s.set_orientation(Cardinal.(res.orientation));
+            
+            switch (res.orientation) {
+                case "n" : s.set_orientation(Cardinal.n); break;
+                case "e" : s.set_orientation(Cardinal.e); break;
+                case "w" : s.set_orientation(Cardinal.w); break;
+                case "s" : s.set_orientation(Cardinal.s); break;
+            }
+
             // TODO put ship at given position
             int x = 97 - res.x;
             int y = res.y;
@@ -57,7 +63,7 @@ public class Player {
 
             // TODO when ship placement successful
             ++i;
-            done = i == 5;
+            done = i == ships.length;
 
             board.print();
         } while (!done);
