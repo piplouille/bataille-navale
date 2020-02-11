@@ -1,7 +1,7 @@
 package ensta.ship;
 
 import annexes.ColorUtil;
-import ensta.AbstractShip;
+import ensta.ship.AbstractShip;
 
 public class ShipState {
     private AbstractShip ship; // Référence vers le navire concerné par l'état
@@ -24,10 +24,11 @@ public class ShipState {
     public String toString() {
         // retourne le label du navire associé : rouge si touché
         if (isStruck()) {
-            return ColorUtil.colorize(ship.get_label(), ColorUtil.Color.RED);
+            // return ColorUtil.colorize(ship.get_label(), ColorUtil.Color.RED);
+            return ship.get_label().toString();
         }
         else {
-            return ship.get_label();
+            return ship.get_label().toString();
         }
     }
 

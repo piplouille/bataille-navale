@@ -157,8 +157,9 @@ public class Board implements IBoard {
         return hits[x][y];
     }
 
-    public Hit sendHit(int x, int y) {
-        // C'est sur soi-même
-        // Je renvoie ce qui se passe sur ma case
-    }
+    // public Hit sendHit(int x, int y) {
+    //     // C'est sur soi-même
+    //     // Je renvoie ce qui se passe sur ma case
+    //     return Hit(-1, "manqué");
+    // }
 }
