@@ -5,8 +5,8 @@ import annexes.*;
 
 public class Board implements IBoard {
     private String name;
-    private Character boats[][];
-    private boolean hits[][];
+    private Character boats[][]; // pour afficher ma grille avec shipstate
+    private boolean hits[][]; // vision du board de l'adversaire
 
     public Board(String n_name, int size) {
         name = n_name;
@@ -108,5 +108,6 @@ public class Board implements IBoard {
 
     public Hit sendHit(int x, int y) {
         // C'est sur soi-même
+        // Je renvoie ce qui se passe sur ma case
     }
 }

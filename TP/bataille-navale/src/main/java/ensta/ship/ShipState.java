@@ -9,7 +9,12 @@ public class ShipState {
 
     public void addStrike() {
         // Le navire est touché en cet endroit
-        struck = true;
+        // vérifier que ya pas deja struck
+        // verifier qu lest pas coulé isSunk();
+        if (!struck) {
+            ship.addStrike();
+            struck = true;
+        }
     }
 
     public boolean isStruck() {
