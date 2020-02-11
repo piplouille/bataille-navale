@@ -1,6 +1,7 @@
 package ensta;
 
 import ensta.ship.*;
+import main.java.ensta.PutShipException;
 import annexes.*;
 
 public class Board implements IBoard {
@@ -90,25 +91,57 @@ public class Board implements IBoard {
 
     public void putShip(AbstractShip ship, int x, int y) {
         // on met la case en x et y, puis selon orientation, on met la suite
-        if (boats[x][y] != '\u0000') {
-            //raise error
+        int ship_size = ship.get_size();
+        int grid_size = boats[0].length;
+        Cardinal orientation = ship.get_orientation();
+        int vertical = 0;
+        int horizontal = 0;
+
+        switch (orientation) {
+            case n:
+                vertical = 1;
+                break;
+            case s:
+                vertical = -1;
+                break;
+            case e:
+                horizontal = -1;
+                break;
+            case w:
+                horizontal = 1;
+                break;
         }
-        else {
-            boats[x][y] = ship.get_label();
+
+        //On vérifie que les cases sont libres et suffisamment grande pour le bateau à ajouter
+        for (int i=0; i<ship_size; i++)
+        {
+            if ( x+vertical*i >= grid_size || x+vertical*i < 0 || y+horizontal*i >= grid_size || y+vertical*i < 0) {
+                throw new PutShipException();
+                return;
+            }
+            else if (boats[x+vertical*i][y+horizontal*i] != '\u0000') {
+                throw new PutShipException();
+                return;
+            }
+        }
+        
+        for (int i=0; i<ship_size; i++) {
+            boats[x+vertical*i][y+horizontal*i] = ship.get_label();
         }
     }
 
     public boolean hasShip(int x, int y) {
-
+        if (boats[x][y] != '\u0000') {
+            return true;
+        }
         return false;
     }
 
     public void setHit(boolean hit, int x, int y) {
-
+        hits[x][y] = hit;
     }
 
     public Boolean getHit(int x, int y) {
-
-        return false;
+        return hits[x][y];
     }
 }
