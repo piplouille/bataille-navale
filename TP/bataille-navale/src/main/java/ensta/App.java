@@ -24,9 +24,11 @@ public class App {
         board.print();
 
         Destroyer bato = new Destroyer("destroyer", Cardinal.n);
+        Carrier bato2 = new Carrier("carrier", Cardinal.n);
 
         List<AbstractShip> ships = new ArrayList<AbstractShip>();
         ships.add(bato);
+        ships.add(bato2);
 
         Player p = new Player(board, opponentBoard, ships);
         p.putShips();

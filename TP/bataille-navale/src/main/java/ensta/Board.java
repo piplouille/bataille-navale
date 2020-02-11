@@ -26,6 +26,8 @@ public class Board implements IBoard {
         final int number_size = size.toString().length() +1;
         final int line_size = number_size + size*2-1 +4;
 
+        print(name + "\n");
+
         print("Navires :");
         // print les espaces
         //print("                  ");
@@ -117,22 +119,15 @@ public class Board implements IBoard {
                 horizontal = 1;
                 break;
         }
-        print(vertical + "\n");
-        print(horizontal + "\n");
 
         //On vérifie que les cases sont libres et suffisamment grande pour le bateau à ajouter
         for (int i=0; i<ship_size; i++)
         {
-            if ( x+vertical*i >= grid_size || x+vertical*i < 0 || y+horizontal*i >= grid_size || y+vertical*i < 0) {
-                print(x+vertical*i + "\n");
-                print(y+horizontal*i + "\n");
-                
+            if ( x+vertical*i >= grid_size || x+vertical*i < 0 || y+horizontal*i >= grid_size || y+horizontal*i < 0) {
                 throw new PutShipException();
-                
             }
             else if (boats[x+vertical*i][y+horizontal*i] != null) {
                 throw new PutShipException();
-                
             }
 
         }
