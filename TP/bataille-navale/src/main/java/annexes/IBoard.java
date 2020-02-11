@@ -1,6 +1,7 @@
 package annexes;
 
 import ensta.ship.*;
+import ensta.PutShipException;
 import ensta.Cardinal;
 
 public interface IBoard { 
@@ -17,7 +18,7 @@ public interface IBoard {
     * @param x
     * @param y
     */
-    void putShip(AbstractShip ship, int x, int y);
+    void putShip(AbstractShip ship, int x, int y) throws PutShipException;
 
     /**
      * Get if a ship is placed at the given position
