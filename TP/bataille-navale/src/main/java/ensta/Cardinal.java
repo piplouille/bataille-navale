@@ -1,5 +1,5 @@
 package ensta;
 
 public enum Cardinal {
-    NORTH, EAST, SOUTH, WEST;
+    n, s, e, w;
 }
