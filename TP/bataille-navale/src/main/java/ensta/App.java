@@ -11,7 +11,7 @@ import ensta.Cardinal;
  */
 public class App {
     public static void main( String[] args ) {
-        Board board = new Board("cc",40);
+        Board board = new Board("cc",10);
         board.print();
         Destroyer bato = new Destroyer("destroyer", Cardinal.n);
     }
