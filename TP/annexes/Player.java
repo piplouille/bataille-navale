@@ -41,6 +41,14 @@ public class Player {
             // TODO set ship orientation
             // TODO put ship at given position
 
+            /*
+            res.orientation : n, s, e, w
+            res.x
+            res.y
+            */
+            int x = 97 - res.x;
+            s.set_orientation(Cardinal.res.orientation);
+
             // TODO when ship placement successful
             ++i;
             done = i == 5;
