@@ -105,4 +105,8 @@ public class Board implements IBoard {
 
         return false;
     }
+
+    public Hit sendHit(int x, int y) {
+        // C'est sur soi-même
+    }
 }
