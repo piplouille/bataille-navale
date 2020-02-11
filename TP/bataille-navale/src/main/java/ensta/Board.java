@@ -1,6 +1,7 @@
 package ensta;
 
 import ensta.ship.*;
+import ensta.PutShipException;
 import annexes.*;
 
 public class Board implements IBoard {
@@ -8,22 +9,22 @@ public class Board implements IBoard {
     private Character boats[][]; // pour afficher ma grille avec shipstate
     private boolean hits[][]; // vision du board de l'adversaire
 
-    public Board(String n_name, int size) {
+    public Board(final String n_name, final int size) {
         name = n_name;
         boats = new Character[size][size];
         hits = new boolean[size][size];
     }
 
-    public Board(String n_name) {
+    public Board(final String n_name) {
         name = n_name;
         boats = new Character[10][10];
         hits = new boolean[10][10];
     }
 
     public void print() {
-        Integer size = boats[0].length;
-        int number_size = size.toString().length() +1;
-        int line_size = number_size + size*2-1 +4;
+        final Integer size = boats[0].length;
+        final int number_size = size.toString().length() +1;
+        final int line_size = number_size + size*2-1 +4;
 
         print("Navires :");
         // print les espaces
@@ -49,12 +50,17 @@ public class Board implements IBoard {
         print("\n");
 
         for (Integer i = 0; i < size ; i++) {
-            Integer line = i+1;
+            final Integer line = i+1;
             print(line);
             printSpace(number_size - line.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // On print les bateaux
-                print("· ");
+                if (boats[i][j] == null) {
+                    print(". ");
+                }
+                else {
+                    print(boats[i][j] + " ");
+                }
             }
             // on fait les espaces
             printSpace(4);
@@ -63,22 +69,23 @@ public class Board implements IBoard {
             printSpace(number_size - line.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // on print les frappes
-                // switch (hits[i][j]) {    
-                //     case true: print(".") ; break;
-                //     default: print("x") ; break;
-                // }
-                print("· ");
+                if (hits[i][j]) {    
+                    print("X ");
+                } else {
+                    print(". ");
+                }
+                //print("· ");
             }
             print("\n");
         }
     }
 
-    public static void print(Object o) {
+    public static void print(final Object o) {
         // System.out.println(o);
         System.out.print(o);
     }
 
-    public static void printSpace(int n) {
+    public static void printSpace(final int n) {
         for (int i=0; i<n; ++i) {
             print(" ");
         }
@@ -88,22 +95,66 @@ public class Board implements IBoard {
         return boats[0].length;
     }
 
-    public void putShip(AbstractShip ship, int x, int y) {
+    public void putShip(final AbstractShip ship, final int x, final int y) throws PutShipException {
         // on met la case en x et y, puis selon orientation, on met la suite
+        final int ship_size = ship.get_size();
+        final int grid_size = boats[0].length;
+        final Cardinal orientation = ship.get_orientation();
+        int vertical = 0;
+        int horizontal = 0;
+
+        switch (orientation) {
+            case n:
+                vertical = 1;
+                break;
+            case s:
+                vertical = -1;
+                break;
+            case e:
+                horizontal = -1;
+                break;
+            case w:
+                horizontal = 1;
+                break;
+        }
+        print(vertical + "\n");
+        print(horizontal + "\n");
+
+        //On vérifie que les cases sont libres et suffisamment grande pour le bateau à ajouter
+        for (int i=0; i<ship_size; i++)
+        {
+            if ( x+vertical*i >= grid_size || x+vertical*i < 0 || y+horizontal*i >= grid_size || y+vertical*i < 0) {
+                print(x+vertical*i + "\n");
+                print(y+horizontal*i + "\n");
+                
+                throw new PutShipException();
+                
+            }
+            else if (boats[x+vertical*i][y+horizontal*i] != null) {
+                throw new PutShipException();
+                
+            }
+
+        }
+        
+        for (int i=0; i<ship_size; i++) {
+            boats[x+vertical*i][y+horizontal*i] = ship.get_label();
+        }
     }
 
-    public boolean hasShip(int x, int y) {
-
+    public boolean hasShip(final int x, final int y) {
+        if (boats[x][y] != null) {
+            return true;
+        }
         return false;
     }
 
-    public void setHit(boolean hit, int x, int y) {
-
+    public void setHit(final boolean hit, final int x, final int y) {
+        hits[x][y] = hit;
     }
 
-    public Boolean getHit(int x, int y) {
-
-        return false;
+    public Boolean getHit(final int x, final int y) {
+        return hits[x][y];
     }
 
     public Hit sendHit(int x, int y) {

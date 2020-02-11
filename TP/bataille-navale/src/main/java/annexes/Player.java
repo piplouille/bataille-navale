@@ -6,6 +6,7 @@ import java.util.List;
 import ensta.Cardinal;
 import ensta.Board;
 import ensta.ship.AbstractShip;
+import ensta.PutShipException;
 
 public class Player {
     /* **
@@ -52,10 +53,16 @@ public class Player {
             }
 
             // TODO put ship at given position
-            int x = 97 - res.x;
+            int x = res.x;
             int y = res.y;
 
-            board.putShips(s, x, y);
+            try {
+                board.putShip(s, x, y);
+            }
+            catch (PutShipException e) {
+                System.out.println("case invalide");
+                --i;
+            }
 
             // TODO when ship placement successful
             ++i;
