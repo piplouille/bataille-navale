@@ -55,11 +55,7 @@ public class Player {
             int x = 97 - res.x;
             int y = res.y;
 
-            /*
-            res.orientation : n, s, e, w
-            res.x
-            res.y
-            */
+            board.putShips(s, x, y);
 
             // TODO when ship placement successful
             ++i;

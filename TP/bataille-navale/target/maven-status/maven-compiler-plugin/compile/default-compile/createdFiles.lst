@@ -1,13 +1,9 @@
 ensta/Board.class
 annexes/InputHelper$ShipInput.class
-ensta/ship/Destroyer.class
-ensta/ship/Submarine.class
-ensta/App.class
-annexes/IBoard.class
-annexes/Player.class
 annexes/InputHelper.class
 ensta/ship/AbstractShip.class
+ensta/ship/Submarine.class
 annexes/InputHelper$CoordInput.class
 ensta/ship/Battleship.class
 ensta/Cardinal.class
-ensta/ship/Carrier.class
+annexes/IBoard.class
