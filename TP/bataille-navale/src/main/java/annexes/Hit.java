@@ -39,4 +39,9 @@ public enum Hit {
     public String toString() {
         return this.label;
     }
+
+    public void init(int value, String label) {
+        this.value = value;
+        this.label = label;
+    }
 };

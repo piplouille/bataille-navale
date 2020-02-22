@@ -11,14 +11,14 @@ public class Board implements IBoard {
 
     public Board(final String n_name, final int size) {
         name = n_name;
-        boats = new Character[size][size];
-        hits = new boolean[size][size];
+        boats = new ShipState[size][size];
+        hits = new Hit[size][size];
     }
 
     public Board(final String n_name) {
         name = n_name;
-        boats = new Character[10][10];
-        hits = new boolean[10][10];
+        boats = new ShipState[10][10];
+        hits = new Hit[10][10];
     }
 
     public void print() {
@@ -71,9 +71,13 @@ public class Board implements IBoard {
             printSpace(number_size - line.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // on print les frappes
-                if (hits[i][j]) {    
+                if (hits[i][j] == Hit.MISS) {    
                     print("X ");
-                } else {
+                }
+                else if (hits[i][j] == Hit.STIKE) {
+                    print_color("X ");
+                }
+                else {
                     print(". ");
                 }
                 //print("· ");
@@ -86,6 +90,11 @@ public class Board implements IBoard {
         // System.out.println(o);
         System.out.print(o);
     }
+
+    public static void print_color(String o) {
+        // System.out.println(o);
+        System.out.print(ColorUtil.colorize(o, ColorUtil.Color.RED));
+    }    
 
     public static void printSpace(final int n) {
         for (int i=0; i<n; ++i) {
@@ -133,7 +142,7 @@ public class Board implements IBoard {
         }
         
         for (int i=0; i<ship_size; i++) {
-            boats[x+vertical*i][y+horizontal*i] = ship.get_label();
+            boats[x+vertical*i][y+horizontal*i].setShip(ship);
         }
     }
 
@@ -144,11 +153,11 @@ public class Board implements IBoard {
         return false;
     }
 
-    public void setHit(final boolean hit, final int x, final int y) {
-        hits[x][y] = hit;
+    public void setHit(final int value, final String label, final int x, final int y) {
+        hits[x][y].init(value, label);
     }
 
-    public Boolean getHit(final int x, final int y) {
+    public Hit getHit(final int x, final int y) {
         return hits[x][y];
     }
 

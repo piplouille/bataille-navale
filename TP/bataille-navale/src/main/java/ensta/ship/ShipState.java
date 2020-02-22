@@ -7,6 +7,10 @@ public class ShipState {
     private AbstractShip ship; // Référence vers le navire concerné par l'état
     private boolean struck; // True si navire touché en cet endroit
 
+    private ShipState() {
+        struck = false;
+    }
+
     public void addStrike() {
         // Le navire est touché en cet endroit
         // vérifier que ya pas deja struck
@@ -38,5 +42,9 @@ public class ShipState {
 
     public AbstractShip getShip() {
         return ship;
+    }
+
+    public void setShip(AbstractShip s) {
+        ship = s;
     }
 }

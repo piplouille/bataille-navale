@@ -35,7 +35,7 @@ public interface IBoard {
      * @param x
      * @param y
      */
-    void setHit(boolean hit, int x, int y);
+    void setHit(final int value, final String label, int x, int y);
 
     /**
      * Get the state of a hit at the given position
@@ -43,7 +43,7 @@ public interface IBoard {
      * @param y
      * @return true if the hit is successful
      */
-    Boolean getHit(int x, int y);
+    Hit getHit(int x, int y);
 
     // Hit sendHit(int x, int y);
 }
