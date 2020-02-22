@@ -7,7 +7,7 @@ public class ShipState {
     private AbstractShip ship; // Référence vers le navire concerné par l'état
     private boolean struck; // True si navire touché en cet endroit
 
-    private ShipState() {
+    public ShipState() {
         struck = false;
     }
 
@@ -28,8 +28,8 @@ public class ShipState {
     public String toString() {
         // retourne le label du navire associé : rouge si touché
         if (isStruck()) {
-            // return ColorUtil.colorize(ship.get_label(), ColorUtil.Color.RED);
-            return ship.get_label().toString();
+            return ColorUtil.colorize(ship.get_label(), ColorUtil.Color.RED);
+            //return ship.get_label().toString();
         }
         else {
             return ship.get_label().toString();

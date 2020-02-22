@@ -7,18 +7,21 @@ import annexes.*;
 public class Board implements IBoard {
     private String name;
     private ShipState boats[][]; // pour afficher ma grille avec shipstate
-    private Hit hits[][]; // vision du board de l'adversaire
+    private Boolean hits[][]; // vision du board de l'adversaire
 
     public Board(final String n_name, final int size) {
         name = n_name;
         boats = new ShipState[size][size];
-        hits = new Hit[size][size];
+        //hits = new Boolean[size][size];
+        for(int i=0; i<size; i++)
+            for(int j=0; j<size; j++)
+                hits[i][j] = null;
     }
 
     public Board(final String n_name) {
         name = n_name;
         boats = new ShipState[10][10];
-        hits = new Hit[10][10];
+        hits = new Boolean[10][10];
     }
 
     public void print() {
@@ -71,14 +74,14 @@ public class Board implements IBoard {
             printSpace(number_size - line.toString().length());
             for (int j = 0 ; j < size ; j++) {
                 // on print les frappes
-                if (hits[i][j] == Hit.MISS) {    
-                    print("X ");
+                if (hits[i][j] == null) {    
+                    print(". ");
                 }
-                else if (hits[i][j] == Hit.STIKE) {
+                else if (hits[i][j] == Boolean.TRUE) {
                     print_color("X ");
                 }
                 else {
-                    print(". ");
+                    print("X ");
                 }
                 //print("· ");
             }
@@ -153,11 +156,11 @@ public class Board implements IBoard {
         return false;
     }
 
-    public void setHit(final int value, final String label, final int x, final int y) {
-        hits[x][y].init(value, label);
+    public void setHit(Boolean hit, final int x, final int y) {
+        hits[x][y] = hit;
     }
 
-    public Hit getHit(final int x, final int y) {
+    public Boolean getHit(final int x, final int y) {
         return hits[x][y];
     }
 
