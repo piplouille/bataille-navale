@@ -7,7 +7,7 @@ import annexes.*;
 public class Board implements IBoard {
     private String name;
     private Character boats[][]; // pour afficher ma grille avec shipstate
-    private boolean hits[][]; // vision du board de l'adversaire
+    private Hit hits[][]; // vision du board de l'adversaire
 
     public Board(final String n_name, final int size) {
         name = n_name;
