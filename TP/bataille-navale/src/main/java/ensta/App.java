@@ -7,6 +7,7 @@ import ensta.ship.Submarine;
 import ensta.ship.AbstractShip;
 import ensta.Cardinal;
 import annexes.Player;
+import annexes.Hit;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,6 +21,8 @@ import java.util.ListIterator;
 public class App {
     public static void main( String[] args ) {
         Board board = new Board("cc",10);
+        System.out.println("test");
+
         Board opponentBoard = new Board("cc", 10);
         board.print();
 
@@ -28,9 +31,17 @@ public class App {
 
         List<AbstractShip> ships = new ArrayList<AbstractShip>();
         ships.add(bato);
-        ships.add(bato2);
+        //ships.add(bato2);
 
         Player p = new Player(board, opponentBoard, ships);
         p.putShips();
+
+        Hit hit = board.sendHit(5, 8);
+        hit = board.sendHit(6, 8);
+        board.print();
+        System.out.println(bato.isSunk());
+        System.out.println(hit.toString());
+        
+
     }
 }

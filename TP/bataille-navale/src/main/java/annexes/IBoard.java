@@ -2,7 +2,7 @@ package annexes;
 
 import ensta.ship.*;
 import ensta.PutShipException;
-import ensta.Cardinal;
+//import ensta.Cardinal;
 import annexes.Hit;
 
 public interface IBoard { 

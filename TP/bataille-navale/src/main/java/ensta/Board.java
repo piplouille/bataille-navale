@@ -12,10 +12,8 @@ public class Board implements IBoard {
     public Board(final String n_name, final int size) {
         name = n_name;
         boats = new ShipState[size][size];
-        //hits = new Boolean[size][size];
-        for(int i=0; i<size; i++)
-            for(int j=0; j<size; j++)
-                hits[i][j] = null;
+        hits = new Boolean[size][size];
+        
     }
 
     public Board(final String n_name) {
@@ -145,6 +143,7 @@ public class Board implements IBoard {
         }
         
         for (int i=0; i<ship_size; i++) {
+            boats[x+vertical*i][y+horizontal*i] = new ShipState();
             boats[x+vertical*i][y+horizontal*i].setShip(ship);
         }
     }
@@ -166,21 +165,28 @@ public class Board implements IBoard {
 
     public Hit sendHit(int x, int y) {
         //ShipState target = boats[x][y];
+        Hit hit = Hit.fromInt(-1);
 
-        if(!boats[x][y].isStruck()) {
-            if(boats[x][y].getShip() != null) {
+        if(boats[x][y] != null) {
+            if(!boats[x][y].isStruck()) {
                 boats[x][y].addStrike();
                 boats[x][y].getShip().addStrike();
 
                 if(boats[x][y].isSunk()) {
-                    return Hit.fromInt(boats[x][y].getShip().get_size());
-                } 
-                else {
-                    return Hit.fromInt(-2);
+                    hit = Hit.fromInt(boats[x][y].getShip().get_size());
+                } else {
+                    hit = Hit.fromInt(-2);
                 }
             }
         }
-    
-        return Hit.fromInt(-1);
+        
+        if (hit == Hit.MISS) {
+            hits[x][y] = Boolean.FALSE;
+        } else {
+            hits[x][y] = Boolean.TRUE;
+        }
+
+
+        return hit;
     }
 }
