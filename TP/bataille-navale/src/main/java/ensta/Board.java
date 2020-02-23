@@ -164,9 +164,23 @@ public class Board implements IBoard {
         return hits[x][y];
     }
 
-    // public Hit sendHit(int x, int y) {
-    //     // C'est sur soi-même
-    //     // Je renvoie ce qui se passe sur ma case
-    //     return Hit(-1, "manqué");
-    // }
+    public Hit sendHit(int x, int y) {
+        //ShipState target = boats[x][y];
+
+        if(!boats[x][y].isStruck()) {
+            if(boats[x][y].getShip() != null) {
+                boats[x][y].addStrike();
+                boats[x][y].getShip().addStrike();
+
+                if(boats[x][y].isSunk()) {
+                    return Hit.fromInt(boats[x][y].getShip().get_size());
+                } 
+                else {
+                    return Hit.fromInt(-2);
+                }
+            }
+        }
+    
+        return Hit.fromInt(-1);
+    }
 }
