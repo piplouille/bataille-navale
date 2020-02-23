@@ -35,12 +35,15 @@ public class App {
 
         Player p = new Player(board, opponentBoard, ships);
         p.putShips();
-
-        Hit hit = board.sendHit(5, 8);
-        hit = board.sendHit(6, 8);
-        board.print();
-        System.out.println(bato.isSunk());
+        int coords[] = new int[2];
+        Hit hit = p.sendHit(coords);
         System.out.println(hit.toString());
+
+        // Hit hit = board.sendHit(5, 8);
+        // hit = board.sendHit(6, 8);
+        // board.print();
+        // System.out.println(bato.isSunk());
+        // System.out.println(hit.toString());
         
 
     }

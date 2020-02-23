@@ -179,7 +179,7 @@ public class Board implements IBoard {
                 }
             }
         }
-        
+        //utiliser pour le test mais à supprimer ensuite car hits représente le terrain adverse et non le notre !
         if (hit == Hit.MISS) {
             hits[x][y] = Boolean.FALSE;
         } else {
