@@ -1,13 +1,13 @@
 ensta/Board.class
-annexes/BattleShipsAI.class
 annexes/InputHelper$ShipInput.class
+annexes/BattleShipsAI.class
 ensta/ship/Destroyer.class
 ensta/PutShipException.class
 ensta/ship/Submarine.class
 ensta/App.class
 annexes/ColorUtil$Color.class
-annexes/Hit.class
 annexes/IBoard.class
+annexes/Hit.class
 annexes/Player.class
 ensta/ship/ShipState.class
 annexes/InputHelper.class
