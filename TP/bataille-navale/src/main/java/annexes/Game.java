@@ -115,45 +115,44 @@ public class Game {
     }
 
     private void save() {
-        try {
-            // Bonus 2 : uncomment
-            if (!SAVE_FILE.exists()) {
-            SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
-            }
+        // try {
+        //     // Bonus 2 : uncomment
+        //     // if (!SAVE_FILE.exists()) {
+        //     // SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
+        //     // }
 
-            // Bonus 2 : serialize players
-                FileOutputStream f = new FileOutputStream(SAVE_FILE);
-                ObjectOutputStream o = new ObjectOutputStream(f);
+        //     // // Bonus 2 : serialize players
+        //     //     FileOutputStream f = new FileOutputStream(SAVE_FILE);
+        //     //     ObjectOutputStream o = new ObjectOutputStream(f);
 
-                o.writeObject(player1);
-                o.writeObject(player2);
+        //     //     o.writeObject(player1);
+        //     //     o.writeObject(player2);
 
-                o.close();
-                f.close();
+        //     //     o.close();
+        //     //     f.close();
 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
     }
 
     private boolean loadSave() {
         if (SAVE_FILE.exists()) {
-            try {
-                // Bonus 2 : deserialize players
-                FileInputStream fi = new FileInputStream(SAVE_FILE);
-                ObjectInputStream oi = new ObjectInputStream(fi);
+            // try {
+            //     // Bonus 2 : deserialize players
+            //     FileInputStream fi = new FileInputStream(SAVE_FILE);
+            //     ObjectInputStream oi = new ObjectInputStream(fi);
 
-                Player player1 = (Player) oi.readObject();
-                Player player2 = (Player) oi.readObject();
+            //     Player player1 = (Player) oi.readObject();
+            //     Player player2 = (Player) oi.readObject();
 
-                oi.close();
-                fi.close();
+            //     oi.close();
+            //     fi.close();
 
-                return true;
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            //     return true;
+            // } catch (IOException | ClassNotFoundException e) {
+            //     e.printStackTrace();
+            // }
         }
         return false;
     }
