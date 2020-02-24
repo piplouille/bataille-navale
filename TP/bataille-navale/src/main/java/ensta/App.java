@@ -8,6 +8,7 @@ import ensta.ship.AbstractShip;
 import ensta.Cardinal;
 import annexes.Player;
 import annexes.Hit;
+import annexes.BattleShipsAI;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +20,41 @@ import java.util.ListIterator;
  *
  */
 public class App {
-    public static void main( String[] args ) {
+    public static void main (String[] args) {
+        // Initialisation de board
+        Board board = new Board("Joueur 1", 10);
+        board.print();
+
+        // Initialisation liste de navires
+        Destroyer bato = new Destroyer("destroyer", Cardinal.n);
+        Carrier bato2 = new Carrier("carrier", Cardinal.n);
+        
+        List<AbstractShip> ships = new ArrayList<AbstractShip>();
+        ships.add(bato);
+        ships.add(bato2);
+
+        // Initialisation IA
+        BattleShipsAI ai = new BattleShipsAI(board, board);
+        ai.putShips(ships);
+
+        // Compteur du nombre de bateaux détruits
+        int no_bato = 2;
+
+        int coords[] = new int[2];
+        Hit hit;
+        while (no_bato != 0) {
+            hit = ai.sendHit(coords);
+            board.print("Frappe envoyée à (%d, %d), %s", coord[0], coord[1], hit.toString());
+            if (hit.get_value() < 0) {
+                no_bato --;
+            }
+            board.print();
+            sleep(3000);
+        }
+    }
+
+
+    public static void main_test( String[] args ) {
         Board board = new Board("Joeur 1",10);
         System.out.println("test");
 

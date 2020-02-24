@@ -44,4 +44,8 @@ public enum Hit {
         this.value = value;
         this.label = label;
     }
+
+    public int get_value() {
+        return this.value;
+    }
 };

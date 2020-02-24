@@ -7,6 +7,7 @@
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Submarine.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Destroyer.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/annexes/IBoard.java
+/home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/annexes/BattleShipsAI.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/PutShipException.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/annexes/InputHelper.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/ShipState.java
