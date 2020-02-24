@@ -115,6 +115,34 @@ public class Game {
     }
 
     private void save() {
+<<<<<<< HEAD
+        try {
+            // Bonus 2 : uncomment
+            if (!SAVE_FILE.exists()) {
+            SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
+            }
+
+            // Bonus 2 : serialize players
+            try {
+                FileOutputStream f = new FileOutputStream(SAVE_FILE);
+                ObjectOutputStream o = new ObjectOutputStream(f);
+
+                o.writeObject(player1);
+                o.writeObject(player2);
+
+                o.close();
+                f.close();
+            }
+            catch (FileNotFoundException e) {
+                print("File not found");
+            }
+            catch (IOException e) {
+                print("Error initializing stream");
+            }
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+=======
         // try {
         //     // TODO bonus 2 : uncomment
         //     // if (!SAVE_FILE.exists()) {
@@ -122,6 +150,7 @@ public class Game {
         //     // }
 
         //     // TODO bonus 2 : serialize players
+>>>>>>> 8a24866eea95e0421824b212b5e09b6ea3a8c06a
 
         // } catch (IOException e) {
         //     e.printStackTrace();
@@ -129,6 +158,25 @@ public class Game {
     }
 
     private boolean loadSave() {
+<<<<<<< HEAD
+        if (SAVE_FILE.exists()) {
+            try {
+                // Bonus 2 : deserialize players
+                FileInputStream fi = new FileInputStream(SAVE_FILE);
+                ObjectInputStream oi = new ObjectInputStream(fi);
+
+                Player player1 = (Player) oi.readObject();
+                Player player2 = (Player) oi.readObject();
+
+                oi.close();
+                fi.close();
+
+                return true;
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+=======
         // if (SAVE_FILE.exists()) {
         //     try {
         //         // TODO bonus 2 : deserialize players
@@ -138,6 +186,7 @@ public class Game {
         //         e.printStackTrace();
         //     }
         // }
+>>>>>>> 8a24866eea95e0421824b212b5e09b6ea3a8c06a
         return false;
     }
 
