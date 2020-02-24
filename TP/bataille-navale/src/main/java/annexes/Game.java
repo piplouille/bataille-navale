@@ -122,7 +122,6 @@ public class Game {
             }
 
             // Bonus 2 : serialize players
-            try {
                 FileOutputStream f = new FileOutputStream(SAVE_FILE);
                 ObjectOutputStream o = new ObjectOutputStream(f);
 
@@ -131,20 +130,11 @@ public class Game {
 
                 o.close();
                 f.close();
-            }
-            catch (FileNotFoundException e) {
-                print("File not found");
-            }
-            catch (IOException e) {
-                print("Error initializing stream");
-            }
-            catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
 
-        // } catch (IOException e) {
-        //     e.printStackTrace();
-        // }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean loadSave() {
@@ -209,5 +199,10 @@ public class Game {
     private static List<AbstractShip> createDefaultShips() {
         return Arrays.asList(new AbstractShip[] { new Destroyer("bato", Cardinal.n), new Submarine("sous", Cardinal.n),
                 new Submarine("marin", Cardinal.n), new BattleShip("Bato", Cardinal.n), new Carrier("Grand BATO", Cardinal.n) });
+    }
+
+    public static void print(final Object o) {
+        // System.out.println(o);
+        System.out.print(o);
     }
 }
