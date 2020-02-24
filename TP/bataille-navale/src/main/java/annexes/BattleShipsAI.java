@@ -71,7 +71,8 @@ public class BattleShipsAI implements Serializable {
         // AbstractShip.Orientation[] orientations = AbstractShip.Orientation.values();
         Cardinal[] orientations = Cardinal.values();
 
-        for (AbstractShip s : ships) {
+        for (int i = 0; i < ships.length; ++i) {
+            AbstractShip s = ships[i];
             do {
                 // TODO use Random to pick a random x, y & orientation
                 rand = rnd.nextInt();
@@ -80,14 +81,14 @@ public class BattleShipsAI implements Serializable {
                 y = (rand >= 0 ? rand : -rand) % board.getSize();
                 rand = rnd.nextInt();
                 ori = (rand >= 0 ? rand : -rand) % 4;
-                Board.print(x + " // " + y + " // " + ori + "\n");
+                //Board.print(x + " // " + y + " // " + ori + "\n");
                 s.set_orientation(orientations[ori]);
             } while (!canPutShip(s, x, y));
             try {
                 board.putShip(s, x, y);
             }
             catch(PutShipException e) {
-                // None
+                i--;
             }
         }
     }

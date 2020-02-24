@@ -27,6 +27,7 @@ public class Board implements IBoard {
         final int number_size = size.toString().length() +1;
         final int line_size = number_size + size*2-1 +4;
 
+        print("\n");
         print(name + "\n");
 
         print("Navires :");
@@ -175,7 +176,7 @@ public class Board implements IBoard {
                 if(boats[x][y].isSunk()) {
                     // si le bateau vient de couler
                     hit = Hit.fromInt(boats[x][y].getShip().get_size());
-                    print(boats[x][y].getShip().get_name() + " a coulé uééé");
+                    print(boats[x][y].getShip().get_name() + " a coulé uééé !!! \n");
                 } else {
                     hit = Hit.fromInt(-2);
                 }

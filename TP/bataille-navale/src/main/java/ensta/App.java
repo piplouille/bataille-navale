@@ -36,7 +36,7 @@ public class App {
         // Initialisation IA
         BattleShipsAI ai = new BattleShipsAI(board, board);
         ai.putShips(ships);
-
+        board.print();
         // Compteur du nombre de bateaux détruits
         int no_bato = 2;
 
@@ -44,8 +44,8 @@ public class App {
         Hit hit;
         while (no_bato != 0) {
             hit = ai.sendHit(coords);
-            Board.print("Frappe envoyée à (" + coords[0] + ", " + coords[1] + "), " + hit.toString());
-            if (hit.get_value() < 0) {
+            Board.print("Frappe envoyée à (" + coords[0] + ", " + coords[1] + "), " + hit.toString() + "\n");
+            if (hit.get_value() > 0) {
                 no_bato --;
             }
             board.print();
