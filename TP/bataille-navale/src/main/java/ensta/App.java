@@ -26,12 +26,12 @@ public class App {
         board.print();
 
         // Initialisation liste de navires
-        Destroyer bato = new Destroyer("destroyer", Cardinal.n);
-        Carrier bato2 = new Carrier("carrier", Cardinal.n);
+        Destroyer bato0 = new Destroyer("destroyer", Cardinal.n);
+        Carrier bato1 = new Carrier("carrier", Cardinal.n);
         
-        List<AbstractShip> ships = new ArrayList<AbstractShip>();
-        ships.add(bato);
-        ships.add(bato2);
+        AbstractShip ships[] = new AbstractShip[2];
+        ships[0] = bato0;
+        ships[1] = bato1;
 
         // Initialisation IA
         BattleShipsAI ai = new BattleShipsAI(board, board);
@@ -44,12 +44,12 @@ public class App {
         Hit hit;
         while (no_bato != 0) {
             hit = ai.sendHit(coords);
-            board.print("Frappe envoyée à (%d, %d), %s", coord[0], coord[1], hit.toString());
+            Board.print("Frappe envoyée à (" + coords[0] + ", " + coords[1] + "), " + hit.toString());
             if (hit.get_value() < 0) {
                 no_bato --;
             }
             board.print();
-            sleep(3000);
+            //sleep(3000);
         }
     }
 

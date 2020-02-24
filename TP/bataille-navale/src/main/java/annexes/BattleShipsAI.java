@@ -3,7 +3,9 @@ package annexes;
 import java.io.Serializable;
 import java.util.*;
 import ensta.ship.AbstractShip;
+import ensta.Board;
 import ensta.Cardinal;
+import ensta.PutShipException;
 
 public class BattleShipsAI implements Serializable {
 
@@ -63,8 +65,8 @@ public class BattleShipsAI implements Serializable {
      * @param ships the ships to put
      */
     public void putShips(AbstractShip ships[]) {
-        int x, y;
-        Cardinal o;
+        int x, y, ori, rand;
+        //Cardinal o;
         Random rnd = new Random();
         // AbstractShip.Orientation[] orientations = AbstractShip.Orientation.values();
         Cardinal[] orientations = Cardinal.values();
@@ -72,11 +74,21 @@ public class BattleShipsAI implements Serializable {
         for (AbstractShip s : ships) {
             do {
                 // TODO use Random to pick a random x, y & orientation
-                x = rnd.nextInt() % board.getSize();
-                y = rnd.nextInt() % board.getSize();
-                s.set_orientation(orientations[rnd.nextInt() % 4]);
+                rand = rnd.nextInt();
+                x = (rand >= 0 ? rand : -rand) % board.getSize();
+                rand = rnd.nextInt();
+                y = (rand >= 0 ? rand : -rand) % board.getSize();
+                rand = rnd.nextInt();
+                ori = (rand >= 0 ? rand : -rand) % 4;
+                Board.print(x + " // " + y + " // " + ori + "\n");
+                s.set_orientation(orientations[ori]);
             } while (!canPutShip(s, x, y));
-            board.putShip(s, x, y);
+            try {
+                board.putShip(s, x, y);
+            }
+            catch(PutShipException e) {
+                // None
+            }
         }
     }
 
