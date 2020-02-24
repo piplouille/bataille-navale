@@ -115,7 +115,6 @@ public class Game {
     }
 
     private void save() {
-<<<<<<< HEAD
         try {
             // Bonus 2 : uncomment
             if (!SAVE_FILE.exists()) {
@@ -142,15 +141,6 @@ public class Game {
             catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-=======
-        // try {
-        //     // TODO bonus 2 : uncomment
-        //     // if (!SAVE_FILE.exists()) {
-        //     // SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
-        //     // }
-
-        //     // TODO bonus 2 : serialize players
->>>>>>> 8a24866eea95e0421824b212b5e09b6ea3a8c06a
 
         // } catch (IOException e) {
         //     e.printStackTrace();
@@ -158,7 +148,6 @@ public class Game {
     }
 
     private boolean loadSave() {
-<<<<<<< HEAD
         if (SAVE_FILE.exists()) {
             try {
                 // Bonus 2 : deserialize players
@@ -176,17 +165,6 @@ public class Game {
                 e.printStackTrace();
             }
         }
-=======
-        // if (SAVE_FILE.exists()) {
-        //     try {
-        //         // TODO bonus 2 : deserialize players
-
-        //         return true;
-        //     } catch (IOException | ClassNotFoundException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
->>>>>>> 8a24866eea95e0421824b212b5e09b6ea3a8c06a
         return false;
     }
 
