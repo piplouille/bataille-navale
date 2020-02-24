@@ -118,12 +118,12 @@ public class Game {
 
     private void save() {
         try {
-            // TODO bonus 2 : uncomment
+            // Bonus 2 : uncomment
             if (!SAVE_FILE.exists()) {
             SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
             }
 
-            // TODO bonus 2 : serialize players
+            // Bonus 2 : serialize players
             try {
                 FileOutputStream f = new FileOutputStream(SAVE_FILE);
                 ObjectOutputStream o = new ObjectOutputStream(f);
@@ -152,7 +152,7 @@ public class Game {
     private boolean loadSave() {
         if (SAVE_FILE.exists()) {
             try {
-                // TODO bonus 2 : deserialize players
+                // Bonus 2 : deserialize players
                 FileInputStream fi = new FileInputStream(SAVE_FILE);
                 ObjectInputStream oi = new ObjectInputStream(fi);
 
