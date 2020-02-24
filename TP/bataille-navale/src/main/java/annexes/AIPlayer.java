@@ -3,6 +3,9 @@ package annexes;
 import java.io.Serializable;
 import java.util.List;
 
+import ensta.Board;
+import ensta.ship.AbstractShip;;
+
 public class AIPlayer extends Player {
     /*
      * ** Attribut
@@ -17,10 +20,10 @@ public class AIPlayer extends Player {
         ai = new BattleShipsAI(ownBoard, opponentBoard);
     }
 
-    // TODO AIPlayer must not inherit "keyboard behavior" from player. Call ai
-    // instead.
+    public void putShips(AbstractShip ships[]) {
+        ai.putShips(ships);
+    }
 
-    putShip
 
-    sendHit
+    
 }

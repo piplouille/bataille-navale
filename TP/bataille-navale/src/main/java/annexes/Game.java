@@ -5,6 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import ensta.Board;
+import ensta.Cardinal;
+import ensta.ship.AbstractShip;
+import ensta.ship.BattleShip;
+import ensta.ship.Carrier;
+import ensta.ship.Destroyer;
+import ensta.ship.Submarine;
+
 public class Game {
 
     /*
@@ -28,14 +36,32 @@ public class Game {
     public Game init() {
         if (!loadSave()) {
             // init attributes
-            System.out.println("entre ton nom:");
+            System.out.println("entre ton nom: ");
 
             // TODO use a scanner to read player name
+            sin = new Scanner(System.in);
+            String name = sin.nextLine();
+            sin.close();
+
+            System.out.print("\n");
+            System.out.println("entre la taille du terrain : ");
+            //On peut rajouter des exceptions pour gérer les entrées invalides. 
+            sin = new Scanner(System.in);
+            int size = sin.nextInt();
+            sin.close();
 
             // TODO init boards
             Board b1, b2;
+            b1 = new Board(name, size);
+            b2 = new Board("AI", size);
+
 
             // TODO init this.player1 & this.player2
+
+            //List<AbstractShip> ships = createDefaultShips();
+            List<AbstractShip> ships = Arrays.asList(new AbstractShip[] { new Destroyer("bato", Cardinal.n) });
+            this.player1 = new Player(b1, b2, ships);
+            this.player2 = new AIPlayer(b2, b1, ships);
 
             b1.print();
             // place player ships
@@ -93,11 +119,30 @@ public class Game {
     private void save() {
         try {
             // TODO bonus 2 : uncomment
-            // if (!SAVE_FILE.exists()) {
-            // SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
-            // }
+            if (!SAVE_FILE.exists()) {
+            SAVE_FILE.getAbsoluteFile().getParentFile().mkdirs();
+            }
 
             // TODO bonus 2 : serialize players
+            try {
+                FileOutputStream f = new FileOutputStream(SAVE_FILE);
+                ObjectOutputStream o = new ObjectOutputStream(f);
+
+                o.writeObject(player1);
+                o.writeObject(player2);
+
+                o.close();
+                f.close();
+            }
+            catch (FileNotFoundException e) {
+                print("File not found");
+            }
+            catch (IOException e) {
+                print("Error initializing stream");
+            }
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -108,6 +153,14 @@ public class Game {
         if (SAVE_FILE.exists()) {
             try {
                 // TODO bonus 2 : deserialize players
+                FileInputStream fi = new FileInputStream(SAVE_FILE);
+                ObjectInputStream oi = new ObjectInputStream(fi);
+
+                Player player1 = (Player) oi.readObject();
+                Player player2 = (Player) oi.readObject();
+
+                oi.close();
+                fi.close();
 
                 return true;
             } catch (IOException | ClassNotFoundException e) {
@@ -156,7 +209,7 @@ public class Game {
     }
 
     private static List<AbstractShip> createDefaultShips() {
-        return Arrays.asList(new AbstractShip[] { new Destroyer(), new Submarine(), new Submarine(), new BattleShip(),
-                new Carrier() });
+        return Arrays.asList(new AbstractShip[] { new Destroyer("bato", Cardinal.n), new Submarine("sous", Cardinal.n),
+                new Submarine("marin", Cardinal.n), new BattleShip("Bato", Cardinal.n), new Carrier("Grand BATO", Cardinal.n) });
     }
 }

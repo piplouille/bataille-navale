@@ -8,7 +8,7 @@ import ensta.Board;
 import ensta.ship.AbstractShip;
 import ensta.PutShipException;
 
-public class Player {
+public class Player implements Serializable {
     /* **
      * Attributs
      */
