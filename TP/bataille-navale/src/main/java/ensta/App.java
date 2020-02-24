@@ -9,6 +9,7 @@ import ensta.Cardinal;
 import annexes.Player;
 import annexes.Hit;
 import annexes.BattleShipsAI;
+import annexes.Game;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +22,7 @@ import java.util.ListIterator;
  */
 public class App {
     public static void main (String[] args) {
+        /*
         // Initialisation de board
         Board board = new Board("Joueur 1", 10);
         board.print();
@@ -59,6 +61,10 @@ public class App {
             Board.print("\n\n\n\n");
             sleep(400);
         }
+        */
+        Game game = new Game();
+        game.init();
+        game.run();
     }
 
     private static void sleep(int ms) {
