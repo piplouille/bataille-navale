@@ -44,7 +44,7 @@ public class Game {
             //sin.close();
 
             System.out.print("\n");
-            int size = 5;
+            int size = 10;
 
             // TODO init boards
             Board b1, b2;
@@ -54,9 +54,9 @@ public class Game {
 
             // TODO init this.player1 & this.player2
 
-            //List<AbstractShip> ships = createDefaultShips();
-            AbstractShip[] ArrayShips = new AbstractShip[] { new Destroyer("bato", Cardinal.n) };
-            List<AbstractShip> ships = Arrays.asList(ArrayShips);
+            List<AbstractShip> ships = createDefaultShips();
+            // AbstractShip[] ArrayShips = new AbstractShip[] { new Destroyer("bato", Cardinal.n) };
+            // List<AbstractShip> ships = Arrays.asList(ArrayShips);
             this.player1 = new Player(b1, b2, ships);
             this.player2 = new AIPlayer(b2, b1, ships);
 
@@ -109,7 +109,7 @@ public class Game {
 
         } while (!done);
 
-        //SAVE_FILE.delete();
+        SAVE_FILE.delete();
         System.out.println(String.format("joueur %d gagne", player1.lose ? 2 : 1));
         //sin.close();
     }
