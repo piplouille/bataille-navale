@@ -20,10 +20,10 @@ import java.util.ListIterator;
  */
 public class App {
     public static void main( String[] args ) {
-        Board board = new Board("cc",10);
+        Board board = new Board("Joeur 1",10);
         System.out.println("test");
 
-        Board opponentBoard = new Board("cc", 10);
+        Board opponentBoard = new Board("Joueur 2", 10);
         board.print();
 
         Destroyer bato = new Destroyer("destroyer", Cardinal.n);
@@ -48,6 +48,11 @@ public class App {
         // Player 1 envoie missile à player 2
         int coords[] = new int[2];
         Hit hit = p.sendHit(coords);
+        System.out.println(hit.toString());
+        board.print();
+
+        // Player 1 envoie missile à player 2
+        hit = p.sendHit(coords);
         System.out.println(hit.toString());
         board.print();
 

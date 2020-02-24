@@ -170,21 +170,17 @@ public class Board implements IBoard {
         if(boats[x][y] != null) {
             if(!boats[x][y].isStruck()) {
                 boats[x][y].addStrike();
-                boats[x][y].getShip().addStrike();
+                // boats[x][y].getShip().addStrike(); déjà fait dans la fonction de ShipState
 
                 if(boats[x][y].isSunk()) {
+                    // si le bateau vient de couler
                     hit = Hit.fromInt(boats[x][y].getShip().get_size());
+                    print(boats[x][y].getShip().get_name() + " a coulé uééé");
                 } else {
                     hit = Hit.fromInt(-2);
                 }
             }
         }
-        //utiliser pour le test mais à supprimer ensuite car hits représente le terrain adverse et non le notre !
-        // if (hit == Hit.MISS) {
-        //     hits[x][y] = Boolean.FALSE;
-        // } else {
-        //     hits[x][y] = Boolean.TRUE;
-        // }
 
         return hit;
     }

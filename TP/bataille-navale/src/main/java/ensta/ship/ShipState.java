@@ -22,6 +22,7 @@ public class ShipState {
     }
 
     public boolean isStruck() {
+        // Bateau touché ici
         return struck;
     }
 
@@ -37,6 +38,7 @@ public class ShipState {
     }
 
     public boolean isSunk() {
+        // Bateau est coulé
         return ship.isSunk();
     }
 
