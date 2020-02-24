@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/Cardinal.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/AbstractShip.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/annexes/ColorUtil.java
@@ -14,3 +15,23 @@
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/annexes/Hit.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/App.java
 /home/laetitia/Documents/2A/in205/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Carrier.java
+=======
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/ColorUtil.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/Cardinal.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/Board.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/ShipState.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/Game.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/PutShipException.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/BattleShip.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/AIPlayer.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Destroyer.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/Hit.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Submarine.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/BattleShipsAI.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/IBoard.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/InputHelper.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/Carrier.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/annexes/Player.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/App.java
+/mnt/c/Users/Luc/Documents/ENSTA/in205-bataille/TP/bataille-navale/src/main/java/ensta/ship/AbstractShip.java
+>>>>>>> 8a24866eea95e0421824b212b5e09b6ea3a8c06a
