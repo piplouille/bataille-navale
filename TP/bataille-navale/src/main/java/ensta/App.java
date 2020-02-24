@@ -56,6 +56,11 @@ public class App {
         System.out.println(hit.toString());
         board.print();
 
+        // Player 1 envoie missile à player 2
+        hit = p.sendHit(coords);
+        System.out.println(hit.toString());
+        board.print();
+
         // Hit hit = board.sendHit(5, 8);
         // hit = board.sendHit(6, 8);
         // board.print();

@@ -149,7 +149,7 @@ public class Board implements IBoard {
     }
 
     public boolean hasShip(final int x, final int y) {
-        if (boats[x][y] != null) {
+        if (boats[x][y] != null && !boats[x][y].isSunk()) {
             return true;
         }
         return false;
@@ -167,7 +167,7 @@ public class Board implements IBoard {
         //ShipState target = boats[x][y];
         Hit hit = Hit.fromInt(-1);
 
-        if(boats[x][y] != null) {
+        if(hasShip(x, y)) {
             if(!boats[x][y].isStruck()) {
                 boats[x][y].addStrike();
                 // boats[x][y].getShip().addStrike(); déjà fait dans la fonction de ShipState
