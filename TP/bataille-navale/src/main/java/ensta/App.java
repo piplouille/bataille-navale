@@ -24,34 +24,51 @@ public class App {
         // Initialisation de board
         Board board = new Board("Joueur 1", 10);
         board.print();
+        int size = 5;
 
         // Initialisation liste de navires
         Destroyer bato0 = new Destroyer("destroyer", Cardinal.n);
         Carrier bato1 = new Carrier("carrier", Cardinal.n);
+        Submarine subm0 = new Submarine("SUB0", Cardinal.n);
+        Submarine subm1 = new Submarine("SUB1", Cardinal.n);
+        Submarine subm2 = new Submarine("SUB2", Cardinal.n);
         
-        AbstractShip ships[] = new AbstractShip[2];
+        AbstractShip ships[] = new AbstractShip[size];
         ships[0] = bato0;
         ships[1] = bato1;
+        ships[2] = subm0;
+        ships[3] = subm1;
+        ships[4] = subm2;
 
         // Initialisation IA
         BattleShipsAI ai = new BattleShipsAI(board, board);
         ai.putShips(ships);
         board.print();
         // Compteur du nombre de bateaux détruits
-        int no_bato = 2;
+        int no_bato = size;
 
         int coords[] = new int[2];
         Hit hit;
         while (no_bato != 0) {
             hit = ai.sendHit(coords);
-            Board.print("Frappe envoyée à (" + coords[0] + ", " + coords[1] + "), " + hit.toString() + "\n");
+            Board.print("Frappe envoyée à (" + coords[0] + ", " + coords[1] + "), " + hit.toString());
             if (hit.get_value() > 0) {
                 no_bato --;
             }
             board.print();
-            //sleep(3000);
+            Board.print("\n\n\n\n");
+            sleep(400);
         }
     }
+
+    private static void sleep(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+        
 
 
     public static void main_test( String[] args ) {
