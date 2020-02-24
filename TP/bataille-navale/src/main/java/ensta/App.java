@@ -1,6 +1,6 @@
 package ensta;
 
-import ensta.ship.Battleship;
+import ensta.ship.BattleShip;
 import ensta.ship.Carrier;
 import ensta.ship.Destroyer;
 import ensta.ship.Submarine;
