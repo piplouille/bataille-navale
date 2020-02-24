@@ -29,15 +29,27 @@ public class App {
         Destroyer bato = new Destroyer("destroyer", Cardinal.n);
         Carrier bato2 = new Carrier("carrier", Cardinal.n);
 
+        // Player 1
         List<AbstractShip> ships = new ArrayList<AbstractShip>();
         ships.add(bato);
-        //ships.add(bato2);
+        ships.add(bato2);
 
         Player p = new Player(board, opponentBoard, ships);
         p.putShips();
+
+        // Player 2
+        List<AbstractShip> ships2 = new ArrayList<AbstractShip>();
+        ships2.add(bato);
+        ships2.add(bato2);
+
+        Player p2 = new Player(opponentBoard, board, ships2);
+        p2.putShips();
+
+        // Player 1 envoie missile à player 2
         int coords[] = new int[2];
         Hit hit = p.sendHit(coords);
         System.out.println(hit.toString());
+        board.print();
 
         // Hit hit = board.sendHit(5, 8);
         // hit = board.sendHit(6, 8);

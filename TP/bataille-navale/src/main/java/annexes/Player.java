@@ -86,6 +86,13 @@ public class Player {
                 coords[0] = hitInput.x;
                 coords[1] = hitInput.y;
                 done = true;
+
+                if (hit == Hit.MISS) {
+                    board.setHit(Boolean.FALSE, coords[0], coords[1]);
+                }
+                else {
+                    board.setHit(Boolean.TRUE, coords[0], coords[1]);
+                }
             }
             // TODO : Game expects sendHit to return BOTH hit result & hit coords.
             // return hit is obvious. But how to return coords at the same time ?
