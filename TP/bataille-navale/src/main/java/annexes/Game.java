@@ -41,14 +41,10 @@ public class Game {
             // TODO use a scanner to read player name
             sin = new Scanner(System.in);
             String name = sin.nextLine();
-            sin.close();
+            //sin.close();
 
             System.out.print("\n");
-            System.out.println("entre la taille du terrain : ");
-            //On peut rajouter des exceptions pour gérer les entrées invalides. 
-            sin = new Scanner(System.in);
-            int size = sin.nextInt();
-            sin.close();
+            int size = 5;
 
             // TODO init boards
             Board b1, b2;
@@ -59,7 +55,8 @@ public class Game {
             // TODO init this.player1 & this.player2
 
             //List<AbstractShip> ships = createDefaultShips();
-            List<AbstractShip> ships = Arrays.asList(new AbstractShip[] { new Destroyer("bato", Cardinal.n) });
+            AbstractShip[] ArrayShips = new AbstractShip[] { new Destroyer("bato", Cardinal.n) };
+            List<AbstractShip> ships = Arrays.asList(ArrayShips);
             this.player1 = new Player(b1, b2, ships);
             this.player2 = new AIPlayer(b2, b1, ships);
 

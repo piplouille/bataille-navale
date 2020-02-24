@@ -20,8 +20,12 @@ public class AIPlayer extends Player {
         ai = new BattleShipsAI(ownBoard, opponentBoard);
     }
 
-    public void putShips(AbstractShip ships[]) {
+    public void putShips() {
         ai.putShips(ships);
+    }
+
+    public Hit sendHit(int[] coords) {
+        return ai.sendHit(coords);
     }
 
 
